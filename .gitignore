@@ -1,0 +1,33 @@
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# macOS
+.DS_Store
+._*
+
+# CocoaPods (if used later)
+Pods/
+
+# Secrets
+*.pem
+*.key
+.env
+
+# Coverage artifacts
+*.profraw
+
+# Per-machine signing, bundle id and relay/Auth0 values (see Udha.xcconfig)
+Local.xcconfig
+
+# Local Claude Code settings (machine-specific)
+.claude/
+.claude-instance-id
+
+
+# The audit's private pattern list — the names being scrubbed must not ship
+# with the scrubber (see scripts/release/audit.sh).
+scripts/release/audit-private.txt

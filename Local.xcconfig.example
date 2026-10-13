@@ -1,0 +1,6 @@
+// Copy to Local.xcconfig (git-ignored) and fill in. Overrides Udha.xcconfig.
+UDHA_BUNDLE_ID = com.yourname.udha
+DEVELOPMENT_TEAM = ABCDE12345
+UDHA_RELAY_HOST = relay.example.com
+UDHA_AUTH0_DOMAIN = your-tenant.us.auth0.com
+UDHA_AUTH0_CLIENT_ID = yourNativeAppClientId

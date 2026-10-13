@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!--
+	  Lives outside UdhaWidgets/ on purpose: that folder is a file-system
+	  synchronized group, so a plist inside it would be copied as a resource
+	  *and* used as the Info.plist — two commands producing the same output.
+	  NSExtensionPointIdentifier is nested, so no INFOPLIST_KEY_* build setting
+	  can express it.
+	-->
+	<key>NSExtension</key>
+	<dict>
+		<key>NSExtensionPointIdentifier</key>
+		<string>com.apple.widgetkit-extension</string>
+	</dict>
+</dict>
+</plist>

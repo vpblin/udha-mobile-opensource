@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!--
+	  Base Info.plist. GENERATE_INFOPLIST_FILE stays YES, so Xcode merges every
+	  INFOPLIST_KEY_* build setting on top of this file. Only keys with no
+	  build-setting equivalent belong here — CFBundleURLTypes is one of them.
+	-->
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>$(UDHA_BUNDLE_ID)</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<!-- udha://session/<uuid> — deep link from a push notification
+				     straight to the session card that needs a human. -->
+				<string>udha</string>
+			</array>
+		</dict>
+	</array>
+	<!-- Relay and Auth0 settings, filled from Udha.xcconfig / Local.xcconfig. -->
+	<key>UdhaRelayHost</key>
+	<string>$(UDHA_RELAY_HOST)</string>
+	<key>UdhaAuth0Domain</key>
+	<string>$(UDHA_AUTH0_DOMAIN)</string>
+	<key>UdhaAuth0ClientID</key>
+	<string>$(UDHA_AUTH0_CLIENT_ID)</string>
+	<key>UdhaAuth0Audience</key>
+	<string>$(UDHA_AUTH0_AUDIENCE)</string>
+</dict>
+</plist>

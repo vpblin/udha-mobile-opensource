@@ -1,0 +1,21 @@
+# Known false positives for scripts/release/audit.sh.
+#
+# One extended regex per line, matched against the whole `path:line:text`
+# output line. Blank lines and #-comments are ignored. Every entry needs a
+# reason; real hostnames, ids, keys and personal names get fixed in the file.
+
+# .gitignore's and publish-public.sh's whole job is to name the directories
+# that must not ship, `xcuserdata` among them.
+^\.gitignore:[0-9]+:\*?\.?xcuserdata
+^\.gitignore:[0-9]+:\*\.xcworkspace/xcuserdata
+^scripts/release/publish-public\.sh:[0-9]+:.*xcuserdata
+^CLAUDE\.md:[0-9]+:.*xcuserdata
+
+# tests/main.swift and the mock host build fixtures out of invented paths:
+# /Users/alex, /Users/b, /home/dev and /home/b are test data.
+^(tests/main|Udha\.ai/Debug/MockHost)\.swift:[0-9]+:.*/(Users/(alex|b)|home/(dev|b))(/|"|$)
+^Udha\.ai/Sessions/(NewSessionSheet|DirectoryPicker)\.swift:[0-9]+:.*/Users/alex
+^Udha\.ai/Bridge/BridgeModels\.swift:[0-9]+:.*-home-dev-
+
+# CLAUDE.md names the invented fixture paths so contributors reuse them.
+^CLAUDE\.md:[0-9]+:.*Fixtures use invented names
